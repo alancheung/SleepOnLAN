@@ -2,29 +2,27 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Diagnostics;
 using System.Linq;
+using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace WOLClient
+namespace SleepOnLanService
 {
-    public partial class MainForm : Form
+    public partial class Service1 : ServiceBase
     {
-        public MainForm()
+        public Service1()
         {
             InitializeComponent();
         }
 
-        private void DesktopButton_Click(object sender, EventArgs e)
+        protected override void OnStart(string[] args)
         {
-
         }
 
-        private void LaptopButton_Click(object sender, EventArgs e)
+        protected override void OnStop()
         {
-
         }
     }
 }

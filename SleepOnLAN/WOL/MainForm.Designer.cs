@@ -1,5 +1,5 @@
 ﻿
-namespace WOL
+namespace WOLClient
 {
     partial class MainForm
     {
@@ -44,6 +44,7 @@ namespace WOL
             this.DesktopButton.TabIndex = 0;
             this.DesktopButton.Text = "Desktop";
             this.DesktopButton.UseVisualStyleBackColor = true;
+            this.DesktopButton.Click += new System.EventHandler(this.DesktopButton_Click);
             // 
             // MainPanel
             // 
@@ -67,6 +68,7 @@ namespace WOL
             this.LaptopButton.TabIndex = 1;
             this.LaptopButton.Text = "Laptop";
             this.LaptopButton.UseVisualStyleBackColor = true;
+            this.LaptopButton.Click += new System.EventHandler(this.LaptopButton_Click);
             // 
             // MainForm
             // 

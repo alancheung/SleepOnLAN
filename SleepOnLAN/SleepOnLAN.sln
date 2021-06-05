@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WOL", "WOL\WOL.csproj", "{849C50BB-FC99-4BA0-ACD6-C2FC8F3E0C4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WOLClient", "WOL\WOLClient.csproj", "{849C50BB-FC99-4BA0-ACD6-C2FC8F3E0C4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LANHelper", "LANHelper\LANHelper.csproj", "{969EC381-6D4A-42C9-B8B4-5493D9943622}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SleepOnLanService", "SleepOnLanService\SleepOnLanService.csproj", "{7F753358-B274-4CDB-8780-B9A4DD458DAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{849C50BB-FC99-4BA0-ACD6-C2FC8F3E0C4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{849C50BB-FC99-4BA0-ACD6-C2FC8F3E0C4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{849C50BB-FC99-4BA0-ACD6-C2FC8F3E0C4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{969EC381-6D4A-42C9-B8B4-5493D9943622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{969EC381-6D4A-42C9-B8B4-5493D9943622}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{969EC381-6D4A-42C9-B8B4-5493D9943622}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{969EC381-6D4A-42C9-B8B4-5493D9943622}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F753358-B274-4CDB-8780-B9A4DD458DAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F753358-B274-4CDB-8780-B9A4DD458DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F753358-B274-4CDB-8780-B9A4DD458DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F753358-B274-4CDB-8780-B9A4DD458DAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

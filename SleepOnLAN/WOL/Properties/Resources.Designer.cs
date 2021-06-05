@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace WOL.Properties
+namespace WOLClient.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
