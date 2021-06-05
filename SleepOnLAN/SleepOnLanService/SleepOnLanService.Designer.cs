@@ -1,7 +1,7 @@
 ﻿
 namespace SleepOnLanService
 {
-    partial class Service1
+    partial class SleepOnLanService
     {
         /// <summary> 
         /// Required designer variable.

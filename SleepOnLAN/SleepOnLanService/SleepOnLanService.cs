@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace SleepOnLanService
 {
-    public partial class Service1 : ServiceBase
+    public partial class SleepOnLanService : ServiceBase
     {
-        public Service1()
+        public SleepOnLanService()
         {
             InitializeComponent();
         }
