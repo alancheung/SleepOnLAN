@@ -14,12 +14,22 @@ namespace SleepOnLanService
         /// </summary>
         static void Main()
         {
+#if !DEBUG
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
                 new SleepOnLanService()
             };
             ServiceBase.Run(ServicesToRun);
+#else
+            SleepOnLanService service = new SleepOnLanService();
+            service.ServiceStart(new string[0]);
+
+            Console.WriteLine("Program running...");
+            Console.ReadKey();
+            service.ServiceStop();
+            Console.ReadKey();
+#endif
         }
     }
 }
