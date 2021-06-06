@@ -16,7 +16,6 @@ namespace SleepOnLanService
     public partial class SleepOnLanService : ServiceBase
     {
         private UdpClient _udpClient;
-        private IAsyncResult _receiveResult;
 
         public SleepOnLanService()
         {
@@ -24,6 +23,8 @@ namespace SleepOnLanService
             _udpClient = new UdpClient();
             _udpClient.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
             _udpClient.ExclusiveAddressUse = false; // only if you want to send/receive on same machine.
+            IPEndPoint endpoint = Communications.ReceiveEndpoint;
+            _udpClient.Client.Bind(endpoint);
         }
 
         protected override void OnStart(string[] args)
@@ -41,8 +42,7 @@ namespace SleepOnLanService
         /// </summary>
         internal void ServiceStart(string[] args)
         {
-            _udpClient.Client.Bind(Communications.ReceiveEndpoint);
-            _receiveResult = _udpClient.BeginReceive(new AsyncCallback(ReceiveCallback), null);
+            _udpClient.BeginReceive(new AsyncCallback(ReceiveCallback), null);
         }
 
         /// <summary>
@@ -50,17 +50,18 @@ namespace SleepOnLanService
         /// </summary>
         internal void ServiceStop()
         {
-            IPEndPoint referenceReceiveEndpoint = Communications.ReceiveEndpoint;
-            _udpClient?.EndReceive(_receiveResult, ref referenceReceiveEndpoint);
             _udpClient?.Close();
             _udpClient?.Dispose();
             _udpClient = null;
         }
 
-
         private void ReceiveCallback(IAsyncResult result)
         {
-            Console.WriteLine(result.AsyncState.ToString());
+            IPEndPoint endpoint = Communications.BroadcastEndpoint;
+            byte[] received = _udpClient.EndReceive(result, ref endpoint);
+            _udpClient.BeginReceive(new AsyncCallback(ReceiveCallback), null);
+
+            Console.WriteLine(Encoding.UTF8.GetString(received));
         }
     }
 }
