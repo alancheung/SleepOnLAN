@@ -10,17 +10,17 @@ namespace LANHelper
     /// <summary>
     /// Credit to https://stackoverflow.com/a/MACByteLength5529803/11947191
     /// </summary>
-    public static class Communication
+    public static class Communications
     {
         /// <summary>
         /// Broadcast address
         /// </summary>
-        private static readonly IPEndPoint BroadcastEndpoint = new IPEndPoint(IPAddress.Broadcast, port: 9);
+        public static readonly IPEndPoint BroadcastEndpoint = new IPEndPoint(IPAddress.Broadcast, port: 9);
 
         /// <summary>
         /// Address to receive from
         /// </summary>
-        private static readonly IPEndPoint ReceiveEndpoint = new IPEndPoint(IPAddress.Any, port: 9);
+        public static readonly IPEndPoint ReceiveEndpoint = new IPEndPoint(IPAddress.Any, port: 9);
 
         /// <summary>
         /// The length of the MAC address in bytes.
