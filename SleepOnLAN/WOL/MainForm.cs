@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LANHelper;
+using LANHelper.Secrets;
+using System;
 using System.Windows.Forms;
 
 namespace WOLClient
@@ -17,14 +12,24 @@ namespace WOLClient
             InitializeComponent();
         }
 
-        private void DesktopButton_Click(object sender, EventArgs e)
+        private async void WakeDesktopButton_Click(object sender, EventArgs e)
         {
-
+            await Communications.SendWakeupOnLanRequest(SecretKeys.DesktopMAC);
         }
 
-        private void LaptopButton_Click(object sender, EventArgs e)
+        private async void SleepDesktopButton_Click(object sender, EventArgs e)
         {
+            await Communications.SendSleepOnLanRequest(SecretKeys.DesktopMAC);
+        }
 
+        private async void WakeLaptopButton_Click(object sender, EventArgs e)
+        {
+            await Communications.SendWakeupOnLanRequest(SecretKeys.LaptopMAC);
+        }
+
+        private async void SleepLaptopButton_Click(object sender, EventArgs e)
+        {
+            await Communications.SendSleepOnLanRequest(SecretKeys.LaptopMAC);
         }
     }
 }

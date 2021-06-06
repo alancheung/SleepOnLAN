@@ -83,5 +83,11 @@
     <Content Include="Asset\Computer.png" />
     <Content Include="Asset\Laptop.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LANHelper\LANHelper.csproj">
+      <Project>{969EC381-6D4A-42C9-B8B4-5493D9943622}</Project>
+      <Name>LANHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
